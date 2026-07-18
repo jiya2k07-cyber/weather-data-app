@@ -18,19 +18,19 @@ try:
         sunrise=datetime.fromtimestamp(data['sys']['sunrise']) #fromtimestamp will convert into date and time 
         sunset=datetime.fromtimestamp(data['sys']['sunset'])
         print("\n ----------WEATHER REPORT----------")
-        print(f"\n🌍  City: {data['name']}")
-        print(f"🌡️  Temperature: {data['main']['temp']}°C")
-        print(f"🤒  feels like: {data['main']['feels_like']}°C")
-        print(f"💧  Humidity: {data['main']['humidity']}%")
-        print(f"🌥️  Weather: {data['weather'][0]['description'].title()}")
-        print(f"🌬️  Wind speed: {data['wind']['speed']} m/s")
-       # print(f"🌅 Sunrise: {data['sys']['sunrise']}") return unix timestamps.
-       # print(f"🌇 Sunset: {data['sys']['sunset']}")
-        print(f"🌅 Sunrise: {sunrise.strftime('%I:%M %p')}")
-        print(f"🌇 Sunset: {sunset.strftime('%I:%M %p')}")
+        print(f"\n  City: {data['name']}")
+        print(f"  Temperature: {data['main']['temp']}°C")
+        print(f"  feels like: {data['main']['feels_like']}°C")
+        print(f"  Humidity: {data['main']['humidity']}%")
+        print(f"  Weather: {data['weather'][0]['description'].title()}")
+        print(f"  Wind speed: {data['wind']['speed']} m/s")
+       # print(f" Sunrise: {data['sys']['sunrise']}") return unix timestamps.
+       # print(f" Sunset: {data['sys']['sunset']}")
+        print(f" Sunrise: {sunrise.strftime('%I:%M %p')}")
+        print(f" Sunset: {sunset.strftime('%I:%M %p')}")
     else:
-        print("❌ City not found!")
+        print(" City not found!")
 except requests.exceptions.Timeout:
-    print("⌛ The server took too long to respond.")
+    print(" The server took too long to respond.")
 except requests.exceptions.ConnectionError:
-    print("❌ No Internet Connection!")
+    print(" No Internet Connection!")
